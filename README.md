@@ -17,32 +17,11 @@ Storage Manager — это интерактивное CLI-приложение �
 
 Склонируйте репозиторий:
 
-bash
-Копировать
-Редактировать
 git clone https://github.com/TrueMisha/oop_go_project.git
-cd oop_go_project
-Запустите приложение:
-
-bash
-Копировать
-Редактировать
-go run main.go
+Запустите приложение:go run main.go
 
 🧱 Структура проекта
-go
-Копировать
-Редактировать
-oop-go/
-├── main.go — точка входа
-├── ui/
-│   └── cli.go — интерфейс командной строки
-└── storage/
-├── file.go — описание структуры File
-├── base.go — базовая логика хранения
-├── flash.go — реализация флешки
-├── cloud.go — реализация облака
-└── interface.go — интерфейс StorageDevice
+<pre lang="markdown"> ```plaintext oop-go/ ├── main.go — точка входа ├── ui/ │ └── cli.go — интерфейс командной строки └── storage/ ├── file.go — описание структуры File ├── base.go — базовая логика хранения ├── flash.go — реализация флешки ├── cloud.go — реализация облака └── interface.go — интерфейс StorageDevice ``` </pre>
 
 🧰 Возможности
 💽 Выбор устройства хранения:
@@ -67,6 +46,7 @@ oop-go/
 makefile
 ![img.png](img.png)
 📖 Примеры использования
+
 Добавить файл "music.mp3" размером 100 МБ
 
 Удалить файл "photo.jpg"
