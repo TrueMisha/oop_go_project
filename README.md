@@ -22,7 +22,17 @@ git clone https://github.com/TrueMisha/oop_go_project.git
 Запустите приложение:go run main.go
 
 🧱 Структура проекта
-<pre><code>```plaintext oop-go/ ├── main.go # Точка входа ├── ui/ │ └── cli.go # Интерфейс командной строки ├── storage/ │ ├── file.go # Описание структуры File │ ├── base.go # Базовая логика хранения │ ├── flash.go # Реализация флешки │ ├── cloud.go # Реализация облака │ └── interface.go # Интерфейс StorageDevice ``` </code></pre>
+oop-go/
+├── main.go          # Точка входа
+├── ui/
+│   └── cli.go       # Интерфейс командной строки
+├── storage/
+│   ├── file.go      # Описание структуры File
+│   ├── base.go      # Базовая логика хранения
+│   ├── flash.go     # Реализация флешки
+│   ├── cloud.go     # Реализация облака
+│   └── interface.go # Интерфейс StorageDevice
+
 🧰 Возможности
 💽 Выбор устройства хранения:
 
