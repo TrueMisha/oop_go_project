@@ -2,10 +2,12 @@ package storage
 
 import "errors"
 
+// структура для флешки
 type FlashDrive struct {
 	BaseStorage
 }
 
+// функция для добавления файла
 func (f *FlashDrive) AddFile(file File) error {
 	if f.GetFreeSpace() < file.Size {
 		return errors.New("недостаточно места")
@@ -14,6 +16,7 @@ func (f *FlashDrive) AddFile(file File) error {
 	return nil
 }
 
+// функция для удаления  файла
 func (f *FlashDrive) DeleteFile(fileName string) error {
 	for i, file := range f.Files {
 		if file.Name == fileName {

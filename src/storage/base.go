@@ -2,11 +2,14 @@ package storage
 
 import "fmt"
 
+// структура для хранилища
 type BaseStorage struct {
-	Capacity int
-	Files    []File
+	Capacity int    // Общая ёмкость устройства
+	Files    []File // Список файлов, сохранённых на устройстве
+
 }
 
+// функция для  вывода списка файлов, находящихся в хранилище.
 func (b *BaseStorage) ListFiles() {
 	if len(b.Files) == 0 {
 		fmt.Println("Устройство пусто")
@@ -23,6 +26,7 @@ func (b *BaseStorage) Format() {
 	fmt.Println("Устройство отформатировано")
 }
 
+// функция для форматирования
 func (b *BaseStorage) GetFreeSpace() int {
 	used := 0
 	for _, f := range b.Files {

@@ -7,12 +7,13 @@ import (
 	"strconv"
 	"strings"
 
-	"oop-go/storage"
+	"oop-go/src/storage
 )
 
+// RunCLI запускает консольку для выбора
 func RunCLI() {
 	reader := bufio.NewReader(os.Stdin)
-
+	// Выбор типа устройства
 	fmt.Println("Выберите тип устройства:")
 	fmt.Println("1 — Флешка")
 	fmt.Println("2 — Облако")
@@ -21,7 +22,7 @@ func RunCLI() {
 	input = strings.TrimSpace(input)
 
 	var dev storage.StorageDevice
-
+	// Инициализация выбранного устройства
 	switch input {
 	case "1":
 		dev = &storage.FlashDrive{BaseStorage: storage.BaseStorage{Capacity: 1000}}
@@ -31,7 +32,7 @@ func RunCLI() {
 		fmt.Println("Неверный выбор")
 		return
 	}
-
+	// Главное меню
 	for {
 		fmt.Println("\nМеню:")
 		fmt.Println("1 — Добавить файл")
@@ -46,6 +47,7 @@ func RunCLI() {
 		choice = strings.TrimSpace(choice)
 
 		switch choice {
+		// Добавление файла
 		case "1":
 			fmt.Print("Введите имя файла: ")
 			name, _ := reader.ReadString('\n')
@@ -66,7 +68,7 @@ func RunCLI() {
 			} else {
 				fmt.Println("Файл добавлен")
 			}
-
+			// Удаление файла
 		case "2":
 			fmt.Print("Введите имя файла для удаления: ")
 			name, _ := reader.ReadString('\n')
@@ -78,20 +80,23 @@ func RunCLI() {
 			} else {
 				fmt.Println("Файл удалён")
 			}
-
+			// Показать список файлов
 		case "3":
 			dev.ListFiles()
 
+			// Показать свободное место
 		case "4":
 			fmt.Printf("Свободное место: %d МБ\n", dev.GetFreeSpace())
 
+			// Форматировать устройство
 		case "5":
 			dev.Format()
 
+			// Выход из программы
 		case "0":
 			fmt.Println("Выход.")
 			return
-
+			// Обработка неправильного ввода
 		default:
 			fmt.Println("Неверный ввод")
 		}
